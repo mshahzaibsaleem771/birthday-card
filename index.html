@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Pricilia 🎉</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ff9ecb, #ff4fa3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        text-align: center;
+        color: white;
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.7em;
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-size: 2em;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .open-btn {
+        background: white;
+        color: #ff4fa3;
+        border: none;
+        padding: 12px 28px;
+        font-size: 1.1em;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .open-btn:hover {
+        background: #ffe6f2;
+        transform: scale(1.05);
+    }
+
+    .card {
+        display: none;
+        margin-top: 30px;
+        background: #ffffff;
+        color: #333;
+        padding: 28px;
+        border-radius: 20px;
+        max-width: 420px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    p {
+        line-height: 1.7;
+        font-size: 1.05em;
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-style: italic;
+        color: #ff4fa3;
+        font-weight: 500;
+    }
+
+    .sparkle {
+        animation: sparkle 1.5s infinite alternate;
+    }
+
+    @keyframes sparkle {
+        from {opacity: 0.7;}
+        to {opacity: 1;}
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎉 Happy Birthday 🎉</h1>
+    <div class="name">Pricilia 🌸</div>
+
+    <button class="open-btn" onclick="openCard()">✨ Click to Open ✨</button>
+
+    <div class="card" id="card">
+        <p>
+            Dear Pricilia 🌸,<br><br>
+
+            Today, I wish you not only a wonderful birthday 🎂, but also celebrate the incredible person you are ✨.<br><br>
+
+            As my elder sister and PhD colleague 🎓, your wisdom, guidance, and support mean more than words can express.<br><br>
+
+            Gaining a sister like you after 26 years is truly a blessing 🌷 — someone who shares experience, offers thoughtful advice, and brings energy and laughter 🌟 to every moment.<br><br>
+
+            You carry such a beautiful sense of youthful charm 💫 and vibrant spirit — truly timeless and inspiring ✨.<br><br>
+
+            Thank you for being amazing, inspiring, and caring 🌸.<br><br>
+
+            I hope this day brings you as much joy and happiness 🎉 as you bring to everyone around you ✨.
+        </p>
+
+        <div class="footer sparkle">
+            🎀 From your colleague & younger brother 🎀<br>
+            🌸 ✨ 🌸 ✨ 🌸
+        </div>
+    </div>
+</div>
+
+<script>
+    function openCard() {
+        document.getElementById("card").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
