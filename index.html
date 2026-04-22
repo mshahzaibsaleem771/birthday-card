@@ -5,137 +5,148 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Pricilia 🎀</title>
 
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        overflow: hidden;
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #ff9ecb, #ff4fa3);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9ecb, #ff4fa3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    /* Glitter background effect */
-    body::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-image: radial-gradient(white 1px, transparent 1px);
-        background-size: 30px 30px;
-        opacity: 0.15;
-    }
+/* glitter background */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.15;
+}
 
-    .container {
-        text-align: center;
-        z-index: 2;
-        color: white;
-    }
+/* layout */
+.container {
+    text-align: center;
+    z-index: 2;
+    color: white;
+    max-width: 600px;
+}
 
-    h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 3em;
-        margin-bottom: 10px;
-    }
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+}
 
-    .subtitle {
-        font-size: 1.2em;
-        margin-bottom: 30px;
-        opacity: 0.9;
-    }
+/* gift */
+.gift {
+    width: 150px;
+    height: 150px;
+    background: white;
+    margin: auto;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
-    /* Gift box */
-    .gift {
-        width: 150px;
-        height: 150px;
-        background: #fff;
-        margin: auto;
-        border-radius: 20px;
-        position: relative;
-        cursor: pointer;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        transition: 0.3s;
-    }
+.ribbon, .ribbon-horizontal {
+    position: absolute;
+    background: #ff4fa3;
+}
 
-    .gift:hover {
-        transform: scale(1.05);
-    }
+.ribbon {
+    width: 20px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    .ribbon {
-        position: absolute;
-        width: 20px;
-        height: 100%;
-        background: #ff4fa3;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+.ribbon-horizontal {
+    height: 20px;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
-    .ribbon-horizontal {
-        position: absolute;
-        height: 20px;
-        width: 100%;
-        background: #ff4fa3;
-        top: 50%;
-        transform: translateY(-50%);
-    }
+/* message */
+.message {
+    display: none;
+    margin-top: 20px;
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
 
-    /* Hidden message */
-    .message {
-        display: none;
-        margin-top: 30px;
-        background: white;
-        color: #333;
-        padding: 25px;
-        border-radius: 20px;
-        max-width: 420px;
-        animation: fadeIn 1s ease forwards;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
+/* AI Barbie image */
+.barbie-img {
+    width: 260px;
+    margin: 20px auto;
+    display: block;
+    filter: drop-shadow(0 0 15px #ff4fa3);
+    animation: float 3s ease-in-out infinite;
+}
 
-    @keyframes fadeIn {
-        from {opacity: 0; transform: translateY(20px);}
-        to {opacity: 1; transform: translateY(0);}
-    }
+@keyframes float {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
 
-    p {
-        line-height: 1.7;
-        font-size: 1.05em;
-    }
+/* glitter */
+.glitter {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    background: white;
+    box-shadow: 0 0 10px #fff, 0 0 15px #ff4fa3;
+    animation: fall linear forwards;
+}
 
-    .footer {
-        margin-top: 15px;
-        color: #ff4fa3;
-        font-style: italic;
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
     }
+}
 
-    /* Button */
-    .open-text {
-        margin-top: 15px;
-        font-size: 0.9em;
-        opacity: 0.9;
-    }
+.footer {
+    margin-top: 15px;
+    color: #ff4fa3;
+    font-style: italic;
+    text-align: center;
+}
 </style>
 </head>
 
 <body>
 
+<audio id="bgm" loop>
+    <source src="barbie-music.mp3" type="audio/mp3">
+</audio>
+
 <div class="container">
 
     <h1>🎀 Happy Birthday 🎀</h1>
-    <div class="subtitle">A special gift for Pricilia 🌸</div>
 
     <div class="gift" onclick="openGift()">
         <div class="ribbon"></div>
         <div class="ribbon-horizontal"></div>
     </div>
 
-    <div class="open-text">Click the gift to open 🎁</div>
+    <!-- AI Barbie image -->
+    <img src="a_digital_illustration_of_an_animated_barbie_style.png" class="barbie-img">
 
     <div class="message" id="msg">
 
@@ -164,11 +175,64 @@
 </div>
 
 <script>
-    function openGift() {
-        document.querySelector('.gift').style.display = 'none';
-        document.querySelector('.open-text').style.display = 'none';
-        document.getElementById('msg').style.display = 'block';
+function openGift() {
+    document.querySelector('.gift').style.display = 'none';
+    document.getElementById('msg').style.display = 'block';
+
+    const music = document.getElementById("bgm");
+    music.play();
+
+    giftExplosion();
+}
+
+/* glitter */
+function createGlitter() {
+    const g = document.createElement("div");
+    g.className = "glitter";
+    g.style.left = Math.random() * window.innerWidth + "px";
+    g.style.top = "-10px";
+    g.style.animationDuration = (Math.random()*3+2)+"s";
+    document.body.appendChild(g);
+    setTimeout(()=>g.remove(),4000);
+}
+
+setInterval(createGlitter,120);
+
+/* explosion */
+function giftExplosion(){
+    for(let i=0;i<60;i++){
+        const p=document.createElement("div");
+        p.className="glitter";
+        p.style.left=window.innerWidth/2+"px";
+        p.style.top=window.innerHeight/2+"px";
+        document.body.appendChild(p);
+
+        let angle=Math.random()*2*Math.PI;
+        let v=Math.random()*6+2;
+        let vx=Math.cos(angle)*v;
+        let vy=Math.sin(angle)*v;
+
+        let x=window.innerWidth/2;
+        let y=window.innerHeight/2;
+
+        let f=0;
+
+        function anim(){
+            f++;
+            x+=vx;
+            y+=vy;
+            vy+=0.05;
+
+            p.style.left=x+"px";
+            p.style.top=y+"px";
+            p.style.opacity=1-f/60;
+
+            if(f<60) requestAnimationFrame(anim);
+            else p.remove();
+        }
+        anim();
     }
+}
 </script>
 
 </body>
