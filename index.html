@@ -20,7 +20,6 @@ body {
     align-items: center;
 }
 
-/* glitter background */
 body::before {
     content: "";
     position: absolute;
@@ -84,7 +83,6 @@ h1 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* IMPORTANT IMAGE FIX */
 .barbie-img {
     width: 260px;
     margin: 20px auto;
@@ -128,8 +126,9 @@ h1 {
 
 <body>
 
+<!-- 🎵 WORKING ONLINE MUSIC (NO FILE NEEDED) -->
 <audio id="bgm" loop>
-    <source src="barbie-music.mp3" type="audio/mp3">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b7a5c1.mp3?filename=happy-pop-110069.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container">
@@ -141,7 +140,7 @@ h1 {
         <div class="ribbon-horizontal"></div>
     </div>
 
-    <!-- ✅ IMAGE MUST BE IN SAME FOLDER AS index.html -->
+    <!-- IMAGE MUST BE IN SAME FOLDER -->
     <img src="barbie.png" class="barbie-img">
 
     <div class="message" id="msg">
@@ -149,17 +148,15 @@ h1 {
         <p>
             Dear Pricilia 🌸,<br><br>
 
-            Today, I wish you a birthday filled with joy 🎂, warmth ✨, and beautiful moments 🌷.<br><br>
+            Wishing you a beautiful birthday filled with joy 🎂, love ✨, and happiness 🌷.<br><br>
 
-            As my elder sister and PhD colleague 🎓, your guidance, wisdom, and support mean more than words can describe.<br><br>
+            You are truly an inspiration as my elder sister and PhD colleague 🎓.<br><br>
 
-            Finding a sister like you after 26 years is truly a blessing 🎀.<br><br>
+            Your presence makes everything brighter 🌟.<br><br>
 
-            You carry a timeless charm 💫 and vibrant energy that makes everything brighter.<br><br>
+            Thank you for your guidance and support 🌸.<br><br>
 
-            Thank you for being amazing 🌸<br><br>
-
-            I hope this day feels as special as you are ✨🎉
+            Hope your day is as special as you are 🎀✨
         </p>
 
         <div class="footer">
@@ -176,7 +173,11 @@ function openGift() {
     document.getElementById('msg').style.display = 'block';
 
     const music = document.getElementById("bgm");
-    music.play();
+    music.volume = 0.5;
+
+    music.play().catch(err => {
+        console.log("Audio blocked until user interaction");
+    });
 
     giftExplosion();
 }
