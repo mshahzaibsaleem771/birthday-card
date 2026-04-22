@@ -3,67 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Pricilia 🎉</title>
+<title>For Pricilia 🎀</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
     body {
         margin: 0;
         padding: 0;
+        height: 100vh;
+        overflow: hidden;
         font-family: 'Poppins', sans-serif;
         background: linear-gradient(135deg, #ff9ecb, #ff4fa3);
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+    }
+
+    /* Glitter background effect */
+    body::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(white 1px, transparent 1px);
+        background-size: 30px 30px;
+        opacity: 0.15;
     }
 
     .container {
         text-align: center;
+        z-index: 2;
         color: white;
     }
 
     h1 {
         font-family: 'Playfair Display', serif;
-        font-size: 2.7em;
+        font-size: 3em;
         margin-bottom: 10px;
     }
 
-    .name {
-        font-size: 2em;
-        margin-bottom: 20px;
-        font-weight: bold;
+    .subtitle {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        opacity: 0.9;
     }
 
-    .open-btn {
-        background: white;
-        color: #ff4fa3;
-        border: none;
-        padding: 12px 28px;
-        font-size: 1.1em;
-        border-radius: 30px;
+    /* Gift box */
+    .gift {
+        width: 150px;
+        height: 150px;
+        background: #fff;
+        margin: auto;
+        border-radius: 20px;
+        position: relative;
         cursor: pointer;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         transition: 0.3s;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    .open-btn:hover {
-        background: #ffe6f2;
+    .gift:hover {
         transform: scale(1.05);
     }
 
-    .card {
+    .ribbon {
+        position: absolute;
+        width: 20px;
+        height: 100%;
+        background: #ff4fa3;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .ribbon-horizontal {
+        position: absolute;
+        height: 20px;
+        width: 100%;
+        background: #ff4fa3;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* Hidden message */
+    .message {
         display: none;
         margin-top: 30px;
-        background: #ffffff;
+        background: white;
         color: #333;
-        padding: 28px;
+        padding: 25px;
         border-radius: 20px;
         max-width: 420px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
         animation: fadeIn 1s ease forwards;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     @keyframes fadeIn {
@@ -77,19 +109,16 @@
     }
 
     .footer {
-        margin-top: 20px;
-        font-style: italic;
+        margin-top: 15px;
         color: #ff4fa3;
-        font-weight: 500;
+        font-style: italic;
     }
 
-    .sparkle {
-        animation: sparkle 1.5s infinite alternate;
-    }
-
-    @keyframes sparkle {
-        from {opacity: 0.7;}
-        to {opacity: 1;}
+    /* Button */
+    .open-text {
+        margin-top: 15px;
+        font-size: 0.9em;
+        opacity: 0.9;
     }
 </style>
 </head>
@@ -97,38 +126,48 @@
 <body>
 
 <div class="container">
-    <h1>🎉 Happy Birthday 🎉</h1>
-    <div class="name">Pricilia 🌸</div>
 
-    <button class="open-btn" onclick="openCard()">✨ Click to Open ✨</button>
+    <h1>🎀 Happy Birthday 🎀</h1>
+    <div class="subtitle">A special gift for Pricilia 🌸</div>
 
-    <div class="card" id="card">
+    <div class="gift" onclick="openGift()">
+        <div class="ribbon"></div>
+        <div class="ribbon-horizontal"></div>
+    </div>
+
+    <div class="open-text">Click the gift to open 🎁</div>
+
+    <div class="message" id="msg">
+
         <p>
             Dear Pricilia 🌸,<br><br>
 
-            Today, I wish you not only a wonderful birthday 🎂, but also celebrate the incredible person you are ✨.<br><br>
+            Today, I wish you a birthday filled with joy 🎂, warmth ✨, and beautiful moments 🌷.<br><br>
 
-            As my elder sister and PhD colleague 🎓, your wisdom, guidance, and support mean more than words can express.<br><br>
+            As my elder sister and PhD colleague 🎓, your guidance, wisdom, and support mean more than words can describe.<br><br>
 
-            Gaining a sister like you after 26 years is truly a blessing 🌷 — someone who shares experience, offers thoughtful advice, and brings energy and laughter 🌟 to every moment.<br><br>
+            Finding a sister like you after 26 years is truly a blessing 🎀 — someone who inspires, supports, and brings light to every moment 🌟.<br><br>
 
-            You carry such a beautiful sense of youthful charm 💫 and vibrant spirit — truly timeless and inspiring ✨.<br><br>
+            You carry a timeless charm 💫 and a vibrant energy that makes everything brighter.<br><br>
 
-            Thank you for being amazing, inspiring, and caring 🌸.<br><br>
+            Thank you for being amazing, caring, and inspiring 🌸.<br><br>
 
-            I hope this day brings you as much joy and happiness 🎉 as you bring to everyone around you ✨.
+            I hope this day feels as special as you are ✨🎉
         </p>
 
-        <div class="footer sparkle">
-            🎀 From your colleague & younger brother 🎀<br>
-            🌸 ✨ 🌸 ✨ 🌸
+        <div class="footer">
+            🎀 From your colleague & younger brother 🎀
         </div>
+
     </div>
+
 </div>
 
 <script>
-    function openCard() {
-        document.getElementById("card").style.display = "block";
+    function openGift() {
+        document.querySelector('.gift').style.display = 'none';
+        document.querySelector('.open-text').style.display = 'none';
+        document.getElementById('msg').style.display = 'block';
     }
 </script>
 
